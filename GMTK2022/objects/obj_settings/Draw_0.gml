@@ -1,0 +1,1 @@
+draw_text_ext_transformed_color(camera_get_view_x(view_camera[0]) + 16, camera_get_view_y(view_camera[0]) + 116, "Ammo: " + string(player.ammo), 2, 5000, 2, 2, 0, c_black, c_black, c_black, c_black, 1);
