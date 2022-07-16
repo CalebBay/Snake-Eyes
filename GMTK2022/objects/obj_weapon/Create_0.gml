@@ -6,8 +6,6 @@ push = 0;
 push_x = 0;
 push_y = 0;
 recoil = 1;
-bullet_advance = 100;
-advance_loop = 0;
 speed = 1;
 
 spin = false;

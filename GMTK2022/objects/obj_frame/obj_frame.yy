@@ -1,16 +1,15 @@
 {
-  "name": "obj_frame",
   "spriteId": {
     "name": "spr_frame",
     "path": "sprites/spr_frame/spr_frame.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": null,
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -33,6 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
+  "name": "obj_frame",
   "tags": [],
   "resourceType": "GMObject",
 }

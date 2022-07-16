@@ -68,7 +68,7 @@ if (player.hp > 0)
 if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((mouse_check_button_pressed(mb_left) and (player.ammo > 0) and (player.class = 3)) and (player.hp > 0) and player.weapon != 3)
 {
 	if (player.weapon = 1) // Pistol
-	{
+	{		
 		randAttack = int64(random_range(1, 4))
 		if (randAttack = 1)
 		{
@@ -119,13 +119,16 @@ if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((
 	}
 	if ((player.weapon = 3) and (hold_delay = 0)) or (player.weapon != 3)
 	{
-		bullet.image_angle = image_angle;
+		if (player.weapon != 3)
+		{
+			bullet.image_angle = image_angle;
+		}	
 		bullet.direction = image_angle;
 		bullet.depth = obj_weapon.depth + 1;
 	}
 	if (player.weapon = 1)
 	{
-		bullet.speed = 100;
+		bullet.speed = 75;
 	} else if (player.weapon = 2) {
 		bullet.speed = 20;
 	} else if (player.weapon = 3) and (hold_delay = 0) {
@@ -184,7 +187,6 @@ if (after_spin_delay > 1)
 if (mouse_check_button_released(mb_left))
 {	
 	hold_delay = 0;
-	show_debug_message(hold_delay)
 }
 
 // New Gun

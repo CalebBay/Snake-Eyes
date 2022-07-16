@@ -78,7 +78,7 @@ if (flash_alpha > 0)
 }
 
 // Actual Movement
-x = x + x_move;
-y = y + y_move;
+x += x_move;
+y += y_move;
 //x = lerp(x + x_move, x + x_move + obj_weapon.push_x, 0.6);
 //y = lerp(y + y_move, y + y_move + push_y, 0.6);
