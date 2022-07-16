@@ -12,3 +12,14 @@ if (x < camera_get_view_x(view_camera[0])) or
 {
 	instance_destroy();
 }
+
+if (player.weapon = 3) and (speed > 0)
+{
+	speed -= 0.15
+}
+if (die_timer > 0)
+{
+	die_timer -= 1
+} else {
+	instance_destroy();
+}

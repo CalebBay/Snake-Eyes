@@ -12,6 +12,10 @@ if keyboard_check(ord("3"))
 {
 	player.weapon = 3;
 }
+if keyboard_check(ord("4"))
+{
+	player.weapon = 4;
+}
 
 // Gun Type
 image_index = player.weapon - 1;
@@ -106,6 +110,18 @@ if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((
 			}	
 		}
 	}
+	if (player.weapon = 4) // Bazooka
+	{
+		randAttack = int64(random_range(1, 4))
+		if (randAttack = 1)
+		{
+			audio_play_sound(fx_fire1, 9, false);
+		} else if (randAttack = 2) {
+			audio_play_sound(fx_fire2, 9, false);
+		} else if (randAttack = 3) {
+			audio_play_sound(fx_fire3, 9, false);
+		}	
+	}
 	if ((player.weapon = 3) and (hold_delay = 0)) or (player.weapon != 3)
 	{
 		player.ammo -= 1;
@@ -128,11 +144,21 @@ if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((
 	}
 	if (player.weapon = 1)
 	{
+		bullet.image_xscale = 1;
+		bullet.image_yscale = 1;
 		bullet.speed = 75;
 	} else if (player.weapon = 2) {
+		bullet.image_xscale = 1;
+		bullet.image_yscale = 1;
 		bullet.speed = 20;
 	} else if (player.weapon = 3) and (hold_delay = 0) {
+		bullet.image_xscale = 1;
+		bullet.image_yscale = 1;
 		bullet.speed = 10;
+	} else if (player.weapon = 4) {
+		bullet.image_xscale = 3;
+		bullet.image_yscale = 3;
+		bullet.speed = 40;
 	}
 	if (hold_delay = 0)
 	{
@@ -173,11 +199,13 @@ if (after_spin_delay > 1)
 	player.weapon = int64(random_range(1, weapon_count + 1));
 	if (player.weapon = 1)
 	{
-		player.ammo = 5;
-	} else if (player.weapon = 2) {
 		player.ammo = 8;
+	} else if (player.weapon = 2) {
+		player.ammo = 6;
 	} else if (player.weapon = 3) {
 		player.ammo = 10;
+	} else if (player.weapon = 4) {
+		player.ammo = 1;
 	}
 	after_spin_delay -= 1;
 	flash_alpha = 1;

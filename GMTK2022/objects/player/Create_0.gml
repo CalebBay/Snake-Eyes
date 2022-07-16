@@ -13,7 +13,7 @@ last_y_move = 0;
 class = 3; // (1 - Knight, 2 - Mage, 3 - Gunslinger, 4 - Thief)
 weapon = 1;
 hp = 6;
-ammo = 5;
+ammo = 8;
 i_frames = 0;
 
 // Other

@@ -12,7 +12,7 @@ spin = false;
 after_spin_delay = 0;
 
 randAttack = 0;
-weapon_count = 3;
+weapon_count = 4;
 hold_delay = 0;
 
 // Flash Shader

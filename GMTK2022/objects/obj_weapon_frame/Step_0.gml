@@ -2,9 +2,9 @@
 image_index = player.weapon - 1;
 if (player.weapon = 3)
 {
-	image_xscale = 1.75;
-	image_yscale = 1.75;
-	moveover = 8;
+	image_xscale = 2;
+	image_yscale = 2;
+	moveover = 6;
 } else {
 	image_xscale = 3;
 	image_yscale = 3;
