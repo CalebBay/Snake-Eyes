@@ -1,8 +1,8 @@
 {
-  "name": "obj_black",
+  "name": "obj_cloud",
   "spriteId": {
-    "name": "spr_black",
-    "path": "sprites/spr_black/spr_black.yy",
+    "name": "spr_cloud",
+    "path": "sprites/spr_cloud/spr_cloud.yy",
   },
   "spriteMaskId": null,
   "visible": true,
@@ -23,8 +23,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

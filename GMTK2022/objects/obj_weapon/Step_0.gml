@@ -65,7 +65,7 @@ if (player.hp > 0)
 }
 
 // Shoot (Class 3)
-if (mouse_check_button(mb_left) and player.weapon = 3) or ((mouse_check_button_released(mb_left) and (player.ammo > 0) and (player.class = 3)) and (player.hp > 0) and player.weapon != 3)
+if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((mouse_check_button_pressed(mb_left) and (player.ammo > 0) and (player.class = 3)) and (player.hp > 0) and player.weapon != 3)
 {
 	if (player.weapon = 1) // Pistol
 	{
@@ -93,10 +93,8 @@ if (mouse_check_button(mb_left) and player.weapon = 3) or ((mouse_check_button_r
 	}
 	if (player.weapon = 3) // Flamethrower
 	{
-		show_debug_message(flame_delay)
-		if flame_delay = 0
+		if hold_delay = 0
 		{		
-			flame_delay = 10;
 			randAttack = int64(random_range(1, 4))
 			if (randAttack = 1)
 			{
@@ -106,33 +104,41 @@ if (mouse_check_button(mb_left) and player.weapon = 3) or ((mouse_check_button_r
 			} else if (randAttack = 3) {
 				audio_play_sound(fx_fire3, 9, false);
 			}	
-		} else {
-			flame_delay -= 1;
 		}
 	}
-	player.ammo -= 1;
-	push = 10 * recoil;
-	if (player.weapon = 3)
+	if ((player.weapon = 3) and (hold_delay = 0)) or (player.weapon != 3)
+	{
+		player.ammo -= 1;
+		push = 10 * recoil;
+	}
+	if (player.weapon = 3) and (hold_delay = 0)
 	{
 		var bullet = instance_create_layer(x, y, "Player", obj_fire);
 	} else if (player.weapon != 3) {
 		var bullet = instance_create_layer(x, y, "Player", obj_bullet);
 	}
-	if (player.weapon = 3) and (flame_delay = 0)
+	if ((player.weapon = 3) and (hold_delay = 0)) or (player.weapon != 3)
 	{
 		bullet.image_angle = image_angle;
 		bullet.direction = image_angle;
-		if (player.weapon = 1)
-		{
-			bullet.speed = 100;
-		} else if (player.weapon = 2) {
-			bullet.speed = 20;
-		} else if (player.weapon = 3) {
-			bullet.speed = 10;
-		}
 		bullet.depth = obj_weapon.depth + 1;
 	}
-} else if (mouse_check_button_released(mb_left)) and (player.ammo > -1) and (player.hp > 0)
+	if (player.weapon = 1)
+	{
+		bullet.speed = 100;
+	} else if (player.weapon = 2) {
+		bullet.speed = 20;
+	} else if (player.weapon = 3) and (hold_delay = 0) {
+		bullet.speed = 10;
+	}
+	if (hold_delay = 0)
+	{
+		hold_delay = 10;
+	} else
+	{
+		hold_delay -= 1;
+	}
+} else if ((mouse_check_button_pressed(mb_left)) and (player.ammo = 0) and (player.hp > 0)) or ((player.weapon = 3) and (mouse_check_button_released(mb_left)) and (player.ammo = 0) and (player.hp > 0))
 {
 	player.ammo -= 1;
 	push = 10 * recoil;
@@ -162,13 +168,26 @@ if (after_spin_delay > 1)
 	after_spin_delay -= 1
 } else if (after_spin_delay = 1) {
 	player.weapon = int64(random_range(1, weapon_count + 1));
-	player.ammo = 5;
+	if (player.weapon = 1)
+	{
+		player.ammo = 5;
+	} else if (player.weapon = 2) {
+		player.ammo = 8;
+	} else if (player.weapon = 3) {
+		player.ammo = 10;
+	}
 	after_spin_delay -= 1;
 	flash_alpha = 1;
 	obj_dice.visible = false;
 	obj_weapon_frame.flash_alpha = 1;
 }
+if (mouse_check_button_released(mb_left))
+{	
+	hold_delay = 0;
+	show_debug_message(hold_delay)
+}
 
+// New Gun
 if (flash_alpha > 0)
 {
 	flash_alpha -= 0.05;
