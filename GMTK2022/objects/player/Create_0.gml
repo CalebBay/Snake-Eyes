@@ -14,6 +14,7 @@ class = 3; // (1 - Knight, 2 - Mage, 3 - Gunslinger, 4 - Thief)
 weapon = 1;
 hp = 6;
 ammo = 8;
+weapons = [1, 2, 3, 4, 3, 3]
 i_frames = 0;
 
 // Other

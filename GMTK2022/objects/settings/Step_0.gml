@@ -3,3 +3,8 @@ if (keyboard_check(vk_f11)) or ((keyboard_check(vk_alt)) and (keyboard_check(vk_
 {
 	window_set_fullscreen(!window_get_fullscreen())
 }
+
+if (keyboard_check(vk_escape))
+{
+	game_end()
+}

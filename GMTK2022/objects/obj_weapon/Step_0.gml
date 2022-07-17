@@ -196,7 +196,7 @@ if (after_spin_delay > 1)
 {
 	after_spin_delay -= 1
 } else if (after_spin_delay = 1) {
-	player.weapon = int64(random_range(1, weapon_count + 1));
+	player.weapon = player.weapons[int64(random_range(1, 6))];
 	if (player.weapon = 1)
 	{
 		player.ammo = 8;
