@@ -1,0 +1,1 @@
+image_index = player.weapon - 1

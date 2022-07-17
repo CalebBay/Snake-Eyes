@@ -37,11 +37,18 @@ function deal_damage()
     {
         hp -= int64(random_range(100, 111))
     }
+	if (player.weapon = 5)
+    {
+        hp -= int64(random_range(3, 7))
+    }
+	if (player.weapon = 6)
+    {
+        hp -= int64(random_range(45, 58))
+    }
 }
 
-if (place_meeting(x, y, obj_bullet)) or (place_meeting(x, y, obj_fire))
+if (place_meeting(x, y, obj_bullet) and player.weapon != 6) or (place_meeting(x, y, obj_fire)) or (place_meeting(x, y, obj_explosion))
 {
-	show_debug_message(player.weapon)
 	deal_damage()
 }
 

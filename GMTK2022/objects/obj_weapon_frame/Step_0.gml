@@ -11,6 +11,11 @@ if (player.weapon = 3)
 	image_xscale = 2;
 	image_yscale = 2;
 	moveover = 4;
+} else if (player.weapon = 6) {
+	// Bazooka
+	image_xscale = 2;
+	image_yscale = 2;
+	moveover = 6;
 } else {
 	// Everything Else
 	image_xscale = 3;

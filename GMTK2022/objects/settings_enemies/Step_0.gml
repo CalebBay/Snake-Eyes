@@ -8,5 +8,4 @@ if (spawn > 0)
 	enemy.image_xscale = 2
 	enemy.image_yscale = 2
 	spawn -= 1
-	show_debug_message(spawn)
 }
