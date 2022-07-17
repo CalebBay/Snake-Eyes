@@ -21,6 +21,7 @@ if (place_meeting(x, y, obj_enemy)) or
 	}
 	if (player.weapon = 6)
 	{
+		settings.grenades -= 1;
 		explode()
 		instance_destroy();
 	}
@@ -61,7 +62,8 @@ if (player.weapon = 6)
 	{
 		grenade_timer -= 1
 	} else {
-		explode()
+		settings.grenades -= 1;
+		explode();
 		instance_destroy();
 	}
 }

@@ -34,11 +34,11 @@ if (hp > 0)
 	// Facing Y Direction
 	if (mouse_y < y) // Up
 		{
-		image_index = 1;
+		offset = 3;
 		obj_weapon.depth = 10;
 	} else // Down 
 	{
-		image_index = 0;
+		offset = 0;
 		obj_weapon.depth = 1;
 	}
 }
@@ -70,6 +70,9 @@ if (place_meeting(x, y, obj_enemy)) and (i_frames = 0)
 		layer_set_visible("Environment_Solid_U", false);	
 		layer_set_visible("Environment", false);
 		layer_set_visible("Black", true);
+		window_set_cursor(cr_arrow);
+		obj_weapon.visible = false;
+		cursor_sprite = cr_arrow;
 		audio_stop_all()
 	}
 } 
@@ -87,3 +90,25 @@ x += x_move;
 y += y_move;
 //x = lerp(x + x_move, x + x_move + obj_weapon.push_x, 0.6);
 //y = lerp(y + y_move, y + y_move + push_y, 0.6);
+if (player.x <= 10) or (player.x >= 1270)
+{
+	if (x_move != 0)
+	{
+		x -= x_move
+	}
+}
+
+if (x_move != 0) or (y_move != 0)
+{
+	image_speed = 0.5;
+} else {
+	image_speed = 0;	
+}
+if ((x_move != 0) or (y_move != 0)) and (image_index + offset = 3 + offset)
+{
+	image_index -= 3
+} else if ((x_move = 0) and (y_move = 0)) {
+	image_index = 0 + offset
+}
+
+show_debug_message(offset)

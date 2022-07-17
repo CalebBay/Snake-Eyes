@@ -1,35 +1,3 @@
-// TEMP REMOVE LATER
-if keyboard_check(ord("1"))
-{
-	player.weapon = player.weapons[0]
-	player.ammo = 8;
-}
-if keyboard_check(ord("2"))
-{
-	player.weapon = player.weapons[1]
-	player.ammo = 6;
-}
-if keyboard_check(ord("3"))
-{
-	player.weapon = player.weapons[2]
-	player.ammo = 8;
-}
-if keyboard_check(ord("4"))
-{
-	player.weapon = player.weapons[3]
-	player.ammo = 1;
-}
-if keyboard_check(ord("5"))
-{
-	player.weapon = player.weapons[4]
-	player.ammo = 30;
-}
-if keyboard_check(ord("6"))
-{
-	player.weapon = player.weapons[5]
-	player.ammo = 3;
-}
-
 // Gun Type
 image_index = player.weapon - 1;
 
@@ -233,15 +201,21 @@ if (mouse_check_button(mb_left) and (player.weapon = 3 or player.weapon = 5) and
 	}
 } else if ((mouse_check_button_pressed(mb_left)) and (player.ammo = 0) and (player.hp > 0)) or (((player.weapon = 3) or (player.weapon = 5)) and (mouse_check_button_released(mb_left)) and (player.ammo = 0) and (player.hp > 0))
 {
-	player.ammo -= 1;
-	push = 10 * recoil;
-	obj_dice.direction = point_direction(x, y, mouse_x, mouse_y);
-	obj_dice.speed = int64(random_range(40, 48));
-	obj_dice.x = x
-	obj_dice.y = y
-	audio_play_sound(fx_roll, 9, false);
-	obj_dice.visible = true;
-	spin = true;
+	if (settings.grenades = 0)
+	{
+		player.ammo -= 1;
+		push = 10 * recoil;
+		obj_dice.direction = point_direction(x, y, mouse_x, mouse_y);
+		obj_dice.speed = int64(random_range(40, 48));
+		obj_dice.x = x
+		obj_dice.y = y
+		audio_play_sound(fx_roll, 9, false);
+		obj_dice.visible = true;
+		spin = true;
+	} else
+	{
+		audio_play_sound(fx_no_ammo, 9, false);
+	}
 }
 if (spin)
 {

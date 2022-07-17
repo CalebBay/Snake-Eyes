@@ -1,7 +1,7 @@
 /// @description Camera
 // x_camera = x - 640;
 
-y_camera = y - 360;
+y_camera = y - 400;
 if (screen_shake > 0)
 {
 	if (screen_shake % 3 = 1)

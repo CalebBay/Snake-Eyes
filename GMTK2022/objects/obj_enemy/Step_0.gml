@@ -14,12 +14,14 @@ if (hp <= 0)
 		}
 		until (coin_loop = 0)
 	}
+	settings.enemies_remaining -= 1
 	instance_destroy();
 }
 
 // Deal Damage to Enemy, Destroy Bullet.
 function deal_damage()
 {
+	alerted = true;
     hp_show = 45
     if (player.weapon = 1)
     {

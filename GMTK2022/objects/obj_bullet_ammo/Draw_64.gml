@@ -1,4 +1,7 @@
-draw_sprite_stretched(spr_bullet, image_index, 97, 680, 13 * 3, 6 * 3)
+if (settings.game_start = true)
+{
+	draw_sprite_stretched(spr_bullet, image_index, 97, 680, 13 * 3, 6 * 3)
+}
 draw_set_font(fnt_old_pixel)
 draw_set_color(c_black)
 x_pos = 100
@@ -8,9 +11,12 @@ if (player.ammo = -1)
 {
 	text_show = 0
 }
-draw_text_ext_transformed(x_pos - 3, y_pos, text_show, 10, 1000, 1, 1, 0)
-draw_text_ext_transformed(x_pos + 3, y_pos, text_show, 10, 1000, 1, 1, 0)
-draw_text_ext_transformed(x_pos, y_pos - 3, text_show, 10, 1000, 1, 1, 0)
-draw_text_ext_transformed(x_pos, y_pos + 3, text_show, 10, 1000, 1, 1, 0)
-draw_set_color(c_white)
-draw_text_ext_transformed(x_pos, y_pos, text_show, 10, 1000, 1, 1, 0)
+if (settings.game_start = true)
+{
+	draw_text_ext_transformed(x_pos - 3, y_pos, text_show, 10, 1000, 1, 1, 0)
+	draw_text_ext_transformed(x_pos + 3, y_pos, text_show, 10, 1000, 1, 1, 0)
+	draw_text_ext_transformed(x_pos, y_pos - 3, text_show, 10, 1000, 1, 1, 0)
+	draw_text_ext_transformed(x_pos, y_pos + 3, text_show, 10, 1000, 1, 1, 0)
+	draw_set_color(c_white)
+	draw_text_ext_transformed(x_pos, y_pos, text_show, 10, 1000, 1, 1, 0)
+}
