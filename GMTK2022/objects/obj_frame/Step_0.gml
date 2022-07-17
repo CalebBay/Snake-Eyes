@@ -1,8 +1,8 @@
 // Move with Camera
 x = camera_get_view_x(view_camera[0]) + 16;
-y = camera_get_view_y(view_camera[0]) + 104 + player.y_move;
+y = camera_get_view_y(view_camera[0]) + 630 + player.y_move;
 obj_weapon_frame.x = camera_get_view_x(view_camera[0]) + 40 + obj_weapon_frame.moveover;
-obj_weapon_frame.y = camera_get_view_y(view_camera[0]) + 140 + player.y_move;
+obj_weapon_frame.y = camera_get_view_y(view_camera[0]) + 665 + player.y_move;
 
 if (obj_weapon.spin)
 {

@@ -1,5 +1,5 @@
-image_alpha = 0.05;
+image_alpha = 0.06;
 image_speed = 0;
 start_pos = x;
-x -= 3000;
+x -= 2000;
 image_index = int64(random_range(1, 7));

@@ -33,6 +33,10 @@ if (player.weapon = 3)
 {
 	recoil = 0.5;
 }
+if (player.weapon = 4)
+{
+	recoil = 5;
+}
 
 // Recoil
 push_x = lengthdir_x(push, image_angle - 180);
@@ -152,8 +156,8 @@ if (mouse_check_button(mb_left) and player.weapon = 3 and player.ammo > 0) or ((
 		bullet.image_yscale = 1;
 		bullet.speed = 20;
 	} else if (player.weapon = 3) and (hold_delay = 0) {
-		bullet.image_xscale = 1;
-		bullet.image_yscale = 1;
+		bullet.image_xscale = 2;
+		bullet.image_yscale = 2;
 		bullet.speed = 10;
 	} else if (player.weapon = 4) {
 		bullet.image_xscale = 3;
@@ -203,7 +207,7 @@ if (after_spin_delay > 1)
 	} else if (player.weapon = 2) {
 		player.ammo = 6;
 	} else if (player.weapon = 3) {
-		player.ammo = 10;
+		player.ammo = 8;
 	} else if (player.weapon = 4) {
 		player.ammo = 1;
 	}

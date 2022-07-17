@@ -15,6 +15,7 @@ weapon = 1;
 hp = 6;
 ammo = 8;
 weapons = [1, 2, 3, 4, 3, 3]
+coins = 0;
 i_frames = 0;
 
 // Other
@@ -23,6 +24,7 @@ randHit = 0;
 // Camera
 x_camera = 0;
 y_camera = 0;
+screen_shake = 0;
 
 // Hurt Shader
 flash_alpha = 0;

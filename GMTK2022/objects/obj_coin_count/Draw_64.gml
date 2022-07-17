@@ -1,0 +1,1 @@
+draw_sprite_stretched(spr_coin_count, image_index, 16, 100, 57, 60)

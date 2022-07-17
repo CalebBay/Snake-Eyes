@@ -63,10 +63,12 @@ if (place_meeting(x, y, obj_enemy)) and (i_frames = 0)
 	i_frames = 45;
 	} else { // DIE
 		layer_set_visible("Interface", false);
-		layer_set_visible("Environment", false);
-		layer_set_visible("Environment_Solid_U", false);
+		layer_set_visible("Clouds", false);
 		layer_set_visible("Environment_Solid_T", false);
 		layer_set_visible("Enemy", false);
+		layer_set_visible("Hole_Cover", false);
+		layer_set_visible("Environment_Solid_U", false);	
+		layer_set_visible("Environment", false);
 		layer_set_visible("Black", true);
 		audio_stop_all()
 	}

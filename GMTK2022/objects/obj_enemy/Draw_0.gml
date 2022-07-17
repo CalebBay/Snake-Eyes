@@ -4,7 +4,7 @@ if (hp_show > 0)
 {
 	draw_healthbar(
 	x - 40,
-	y - 50,
+	y - 30,
 	x + sprite_width,
 	y - 12,
 	100 * (hp / max_hp),

@@ -10,7 +10,7 @@ if (player.weapon = 3)
 	// Bazooka
 	image_xscale = 2;
 	image_yscale = 2;
-	moveover = 0;
+	moveover = 4;
 } else {
 	// Everything Else
 	image_xscale = 3;
